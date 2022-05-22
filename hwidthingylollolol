@@ -1,0 +1,29 @@
+local ScreenGui = Instance.new("ScreenGui")
+local TextBox = Instance.new("TextBox")
+
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+TextBox.Parent = ScreenGui
+TextBox.AnchorPoint = Vector2.new(0.5, 0.5)
+TextBox.BackgroundColor3 = Color3.fromRGB(52, 52, 52)
+TextBox.Position = UDim2.new(0.5, 0, 0.5, 0)
+TextBox.Size = UDim2.new(0.100000001, 0, 0.100000001, 0)
+TextBox.Font = Enum.Font.SourceSans
+TextBox.PlaceholderText = "hardware id here"
+TextBox.Text = ""
+TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextBox.TextScaled = true
+TextBox.TextSize = 14.000
+TextBox.TextWrapped = true
+TextBox.TextEditable = false
+TextBox.ClearTextOnFocus = false
+
+local HWID = game:GetService('RbxAnalyticsService'):GetClientId()
+
+TextBox.Text = HWID
+
+wait(15)
+
+ScreenGui:Destroy()
